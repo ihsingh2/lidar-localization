@@ -1,0 +1,3 @@
+[submodule "src/02-global-localization/3d_bbs"]
+	path = src/02-global-localization/3d_bbs
+	url = https://github.com/KOKIAOKI/3d_bbs.git
