@@ -1,9 +1,9 @@
 **/.tmp/
 **/.vscode/
 
-data/*
-references/
-results/
+**/data/
+**/references/
+**/results/
 
-src/02-global-localization/cpu_test
-src/02-global-localization/gpu_test
+02-global-localization/cpu_test
+02-global-localization/gpu_test
