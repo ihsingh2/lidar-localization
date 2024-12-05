@@ -1,4 +1,3 @@
-0.0     Floating point exception (core dumped)
 0.5     8071.81
 1.0     3066.18
 1.5     1758.87
