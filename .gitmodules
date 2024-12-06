@@ -1,3 +1,7 @@
 [submodule "02-global-localization/3d_bbs"]
 	path = 02-global-localization/3d_bbs
 	url = https://github.com/KOKIAOKI/3d_bbs.git
+	ignore = dirty
+[submodule "03-depth-estimation/Depth-Anything"]
+	path = 03-depth-estimation/Depth-Anything
+	url = https://github.com/LiheYoung/Depth-Anything.git
