@@ -1,0 +1,57 @@
+\section{Results}
+
+\begin{frame}{Ablation Study}
+\begin{figure}
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[height=0.25\textheight]{../02-global-localization/plots/max_scan_range.pdf}
+        \includegraphics[height=0.25\textheight]{../02-global-localization/plots/min_level_res.pdf}
+        \includegraphics[height=0.25\textheight]{../02-global-localization/plots/max_level.pdf}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[height=0.25\textheight]{../02-global-localization/plots/src_leaf_size.pdf}
+        \includegraphics[height=0.25\textheight]{../02-global-localization/plots/tar_leaf_size.pdf}
+    \end{minipage}
+\end{figure}
+\end{frame}
+
+\begin{frame}{LiDAR Scans}
+\begin{figure}
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/lidar_frame.png}
+        \caption{Sample LiDAR Frame}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/lidar_map.png}
+        \caption{LiDAR Map generated using ICP}
+    \end{minipage}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Image to 3D Projection}
+\begin{figure}
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/rgb_image.png}
+        \caption{Sample RGB Image}
+        \includegraphics[width=\textwidth]{figures/projected_point_cloud.png}
+        \caption{Projected Point Cloud}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/depth_estimate.png}
+        \caption{Estimated Depth}
+        \includegraphics[width=\textwidth]{figures/concatenated_point_cloud.png}
+        \caption{Concatenated Point Cloud}
+    \end{minipage}
+\end{figure}
+\end{frame}

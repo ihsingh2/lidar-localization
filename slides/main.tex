@@ -1,0 +1,51 @@
+\documentclass[9pt]{beamer}
+\beamertemplatenavigationsymbolsempty
+
+% text
+\usepackage{times}
+\linespread{1.4}
+
+% bibliography
+\usepackage[style=ieee]{biblatex}
+\bibliography{refs.bib}
+\renewcommand*{\bibfont}{\footnotesize}
+
+% figures
+\usepackage{graphicx}
+\graphicspath{ {./figures/} }
+\usepackage{tcolorbox}
+\tcbset{fontupper=\small, fonttitle=\normalsize, boxsep=0.15mm, left=1mm, right=1mm, top=1mm, bottom=1mm}
+
+% maths
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% meta
+\title{LiDAR-to-LiDAR Global Localization}
+\author{Himanshu Singh \and Pavan Karke \and Srinath Bhamidipati}
+\date{\today}
+
+\begin{document}
+
+% front
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \tableofcontents
+\end{frame}
+
+\input{sections/problem}
+\input{sections/accomplishment}
+\input{sections/literature_review}
+\input{sections/dataset}
+\input{sections/methodology}
+\input{sections/results}
+
+\begin{frame}[plain, allowframebreaks]{References}
+   \printbibliography[heading=none]
+\end{frame}
+
+\end{document}
