@@ -1,0 +1,8 @@
+\section{Dataset}
+\label{sec:dataset}
+
+The KITTI Odometry dataset \cite{Geiger2013} is employed for evaluation, utilizing the Velodyne LiDAR scans for generating local point clouds. The dataset provides a comprehensive set of LiDAR scans captured in urban environments, facilitating robust testing of the localization algorithm under various conditions.
+
+Preprocessing steps include voxel grid filtering to downsample the point clouds, reducing computational complexity while preserving essential structural information. The parameters for voxel grid filtering are set uniformly across all experiments to maintain consistency. Specifically, both source and target point clouds are downsampled using a voxel size of 0.1m, balancing detail preservation with computational efficiency.
+
+Additionally, synchronization between LiDAR scans and RGB images is ensured to facilitate the integration of visual data into the localization pipeline. Temporal alignment is crucial to accurately correlate spatial information across modalities.

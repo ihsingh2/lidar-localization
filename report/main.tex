@@ -1,0 +1,54 @@
+\documentclass[letterpaper, conference]{IEEEtran}
+
+% links
+\usepackage{bookmark}
+\usepackage{hyperref}
+
+% figures
+\usepackage{color}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% tables
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\newcolumntype{L}{>{\centering\arraybackslash}X}
+
+% maths
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\allowdisplaybreaks
+\newcommand{\raisedtilde}{\raisebox{0.5ex}{\texttildelow}}
+
+% algorithm
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% meta
+\title{LiDAR-to-LiDAR Global Localization}
+\author{Himanshu Singh \and Pavan Karke \and Srinath Bhamidipati}
+\date{\today}
+
+\begin{document}
+
+% front
+\maketitle
+
+\input{sections/problem}
+\input{sections/accomplishment}
+\input{sections/literature_review}
+\input{sections/dataset}
+\input{sections/methodology}
+\input{sections/results}
+\input{sections/contributions}
+\input{sections/conclusion}
+
+\bibliographystyle{ieeetr}
+\bibliography{refs}
+
+\end{document}

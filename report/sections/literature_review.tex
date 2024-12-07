@@ -1,0 +1,20 @@
+\section{Related Work}
+\label{sec:literature_review}
+
+\subsection{Global Localization with Point Cloud Matching}
+Global localization involves determining the robot's pose within a pre-built map without prior pose estimates. Several approaches leverage point cloud matching to achieve this objective. Feature extraction methods, such as Fast Point Feature Histograms (FPFH) \cite{Rusu2009} and Signature of Histograms of Orientations (SHOT) \cite{Salti2014}, have been employed to describe local geometrical structures within point clouds. These descriptors facilitate the establishment of correspondences between source and target point clouds, enabling the estimation of the relative transformation.
+
+Robust pose estimators like RANSAC \cite{10.1145/358669.358692} and TEASER++ \cite{yang2020teaserfastcertifiablepoint} have been utilized to mitigate the impact of outliers during correspondence matching. While these methods are effective in scan-to-scan registration, their computational demands escalate significantly when applied to large-scale map registration, often rendering them unsuitable for real-time applications.
+
+Frame-based methods, such as Scan Context \cite{Kim2018} and OverlapNet \cite{Chen2021}, aggregate geometrical features over entire point cloud frames to generate global descriptors. These descriptors enable efficient place recognition and loop closure detection by identifying frames with similar descriptors. However, these methods typically require the storage of keyframes covering the entire map, which can be memory-intensive and may not generalize well to environments with repetitive structures.
+
+Additionally, methods like BoW3D \cite{Cui2023} and Link3D \cite{Cui2022} have explored the use of bag-of-words and linear keypoints representations to facilitate real-time loop closing in 3D LiDAR SLAM systems. These approaches emphasize the importance of efficient data structures and feature representations in managing large-scale point clouds. Despite these advancements, there remains a significant gap in achieving real-time global localization in 3D environments without extensive computational resources.
+
+\subsection{Point Cloud Matching Using Branch-and-Bound Method}
+The BnB algorithm has been extensively studied for its application in global optimization problems. In the context of point cloud registration, BnB-based methods aim to find the global optimum of the registration cost function by systematically exploring and pruning the search space.
+
+Hess et al. \cite{Hess2016} introduced a 2D BnB-based scan matching algorithm that efficiently searches for the optimal pose by leveraging hierarchical occupancy grid maps. Their method computes upper bounds on the matching scores to prune unpromising candidate poses, significantly reducing computational overhead \cite{Hess2016}. Extending this approach to 3D, however, poses challenges in managing the increased memory requirements and the exponential growth of candidate poses due to the additional rotational degrees of freedom.
+
+Recent advancements have focused on optimizing BnB-based algorithms for 3D environments by introducing sparse voxel representations and parallel processing techniques \cite{GoICP2013}. These enhancements aim to maintain the accuracy and robustness of the BnB approach while mitigating the associated computational and memory costs. Techniques such as GPU acceleration and efficient spatial hashing \cite{Teschner2003} have been pivotal in scaling BnB methods to 3D applications.
+
+Furthermore, algorithms like Go-ICP \cite{GoICP2013} and its successors have demonstrated the feasibility of achieving globally optimal 3D registration by combining ICP with BnB frameworks. These methods, however, often require significant computational resources and are constrained by the size and complexity of the point clouds involved.
