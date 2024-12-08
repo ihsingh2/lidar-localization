@@ -23,14 +23,11 @@ where $T_{\mathbf{x}}$ is the transformation matrix corresponding to pose $\math
 \begin{itemize}
 
 \item Branching
-\begin{align*}
-C_{c_1} &= \left\{ (2x + j_x, 2y + j_y, 2z + j_z, a_a c_\alpha + j_\alpha, a_\beta c_\beta + j_\beta, a_\gamma c_\gamma + j_\gamma, c_{l-1}) \right. \\
-&\left. | (j_x, j_y, j_z) \in \{0,1\}, j_\alpha \in \{0, ..., a_\alpha-1\}, j_\beta \in \{0, ..., a_\beta-1\}, \\
-&j_\gamma \in \{0, ..., a_\gamma-1\}, \right. \left. a_a c_\gamma + j_\gamma, c_{l-1}) \right\}
-\end{align*}
+$C_{c_l} = \{ (2x + j_x, 2y + j_y, 2z + j_z, a_\alpha c_\alpha + j_\alpha, a_\beta c_\beta + j_\beta, a_\gamma c_\gamma + j_\gamma, c_{l-1}) \mid{} j_{x, y, z} \in \{0,1\}, j_{\alpha, \beta, \gamma} \in \{0, \ldots{}, a_{\alpha, \beta, \gamma} -1 \} \}
+$
 
-where $a_\alpha, a_\beta$ and $a_\gamma$ are the number of divisions for each rotational component of a node.
-    
+where $a_{\alpha, \beta, \gamma}$ are the number of divisions for each rotational component of a node.
+
 \item Score Computation
 $$\text{score}(\mathbf{x}) = \sum_{k=1}^{K} \mathcal{H}_l(T_{\mathbf{x}}\mathbf{s}_k)$$
 $$\text{score}_{\text{upper}}(c) = \sum_{k=1}^{K} \max_{\mathbf{v} \in \mathcal{N}(T_{\mathbf{x}_c} \mathbf{s}_k)} \mathcal{H}_l(\mathbf{v})$$

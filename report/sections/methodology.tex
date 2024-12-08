@@ -123,38 +123,6 @@ $$\mathbf{x}_{\text{ICP}}^* = \arg\min_{\mathbf{x}} \sum_{k=1}^{K} \|\mathbf{m}_
 
 where $\mathbf{m}_k$ are the nearest neighbors in the map $\mathcal{M}$ corresponding to scan points $\mathbf{s}_k$. This optimization ensures that the scan points are aligned as closely as possible with the map, providing a solid foundation for the global localization process.
 
-\subsection{Parameter Ablation Studies}
-Ablation studies are essential to understand the influence of various configuration parameters on the performance of the 3D-BBS algorithm. By systematically varying each parameter and observing the resultant changes in localization accuracy and processing time, optimal settings can be identified.
-
-The parameters under investigation include:
-
-\begin{itemize}
-    \item \textbf{max\_level}: Determines the depth of the hierarchical search. Higher levels correspond to finer subdivisions, allowing for more precise localization but increasing computational complexity.
-    \item \textbf{max\_scan\_range}: Specifies the maximum range of LiDAR scans considered. A larger range encompasses more environmental features but may introduce noise and outliers.
-    \item \textbf{min\_level\_res}: Defines the minimum resolution at the finest hierarchical level. Lower resolutions enhance localization precision but require more computational resources.
-    \item \textbf{src\_leaf\_size} and \textbf{tar\_leaf\_size}: Control the voxel grid filtering for source and target point clouds, respectively. Smaller leaf sizes preserve more detail but increase the number of voxels, impacting both memory usage and processing time.
-\end{itemize}
-
-\subsubsection{Effect of max\_level}
-The \textit{max\_level} parameter controls the hierarchical depth of the voxel map. Increasing \textit{max\_level} allows the algorithm to explore finer pose subdivisions, enhancing localization accuracy. However, this comes at the cost of increased computational overhead due to the exponential growth in the number of candidate poses.
-
-To quantify this trade-off, we conducted experiments varying \textit{max\_level} from 4 to 8. The results indicate that beyond a certain level (e.g., $l_{\text{max}} = 6$), the improvement in localization accuracy diminishes while processing time continues to rise significantly. Therefore, an optimal balance is achieved at $l_{\text{max}} = 6$, providing sufficient pose resolution without incurring prohibitive computational costs.
-
-\subsubsection{Effect of max\_scan\_range}
-The \textit{max\_scan\_range} parameter defines the extent of the LiDAR scan utilized for localization. A larger scan range increases the number of points contributing to the matching score, potentially improving robustness against partial occlusions and sparse environments. However, it also introduces more noise and outliers, which can adversely affect localization accuracy.
-
-Experiments were performed with \textit{max\_scan\_range} set to 30m, 50m, and 70m. The findings suggest that increasing the scan range up to 50m yields noticeable improvements in localization accuracy, particularly in urban environments with ample structural features. Beyond 50m, the marginal gains are outweighed by the increased computational load and the presence of more outliers, leading to a slight decrease in performance.
-
-\subsubsection{Effect of min\_level\_res}
-The \textit{min\_level\_res} parameter dictates the voxel resolution at the finest hierarchical level. Lower resolutions (smaller voxel sizes) allow for more precise localization by capturing finer details of the environment. However, this also results in a larger number of voxels, increasing both memory usage and computation time.
-
-We evaluated \textit{min\_level\_res} values of 0.1m, 0.2m, and 0.5m. The results demonstrate that a resolution of 0.2m strikes an optimal balance, providing adequate detail for accurate localization while maintaining reasonable computational efficiency. Resolutions finer than 0.2m offer negligible improvements in accuracy but significantly inflate processing times.
-
-\subsubsection{Effect of src\_leaf\_size and tar\_leaf\_size}
-The leaf sizes for source and target point clouds, \textit{src\_leaf\_size} and \textit{tar\_leaf\_size}, determine the level of downsampling applied to the point clouds. Smaller leaf sizes preserve more geometric details, enhancing the fidelity of the matching process. Conversely, larger leaf sizes reduce the number of points, thereby decreasing computational demands but potentially losing critical information necessary for accurate localization.
-
-Ablation experiments were conducted with \textit{src\_leaf\_size} and \textit{tar\_leaf\_size} set to 0.05m, 0.1m, and 0.2m. The optimal configuration was found to be 0.1m for both parameters, providing a balance between detail preservation and computational efficiency. Leaf sizes smaller than 0.1m did not yield significant accuracy improvements but increased processing times, while larger sizes compromised localization accuracy.
-
 \subsection{Mathematical Formulation of 3D-BBS}
 To provide a deeper understanding of the 3D-BBS algorithm, we present the detailed mathematical formulations governing its operations.
 
